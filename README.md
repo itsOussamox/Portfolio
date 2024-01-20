@@ -16,8 +16,6 @@ Welcome to my portfolio project showcasing my skills as a FullStack Web Develope
 
 - Spline: A tool or library (context-dependent) often used for creating smooth and dynamic animations or curves, enhancing user interfaces with visually appealing transitions.
 
-First, run the development server:
-
 ## How to run:
 
 
@@ -31,4 +29,3 @@ pnpm dev
 bun dev
 ```
 Open [http://localhost:6969](http://localhost:6969) with your browser to see the result.
-
