@@ -1,4 +1,5 @@
 import { Si42 } from "react-icons/si";
+import Job from "./Job";
 
 function HLine({direction = 'bg-gradient-to-r'}){
 
@@ -17,9 +18,9 @@ function HeadExp(){
     )
 }
 
-function VLine(){
+function VLine({direction = ''}){
     return (
-        <div className="w-[2px] h-[20%] bg-gradient-to-b from-transparent via-gray-300 to-white"/>
+        <div className={`w-[2px] h-[20%] ${direction} from-transparent via-gray-300 to-white`}/>
     )
 }
 
@@ -32,14 +33,29 @@ function Circlogo(){
     )
 }
 
+function MiddleLine(){
+    return (
+        <div className="flex flex-col items-center max-sm:w-[50px] w-[100px] h-full">
+            <VLine direction="bg-gradient-to-b" />
+            <Circlogo />
+            <VLine direction="bg-gradient-to-t grow"/>
+        </div>
+    )    
+}
+
 function ContainerExp(){
     return (
-        <div className="h-[800px] w-full  flex flex-col items-center mt-[2%]">
-            <VLine />
-            <Circlogo />
+        <div className="h-[800px] w-full mt-[5%] gap-[3%] flex justify-center">
+            <Job/>
+            <MiddleLine/>
+            <div className="w-[30%] flex flex-col h-full max-sm:hidden">
+                <div className="h-[20%]"/>
+                <div className="h-[100px] text-center flex flex-col justify-center items-center text-5xl whitespace-nowrap box">NOV 2021 - Present</div>
+            </div>
         </div>
     )
 }
+
 
 export default function Experiences(){
     return (
