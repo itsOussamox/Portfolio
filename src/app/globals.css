@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    color: #fff;
+    background: rgba(14, 17, 21, 1);
+}
+
+.textTransparent {
+    -webkit-text-fill-color: transparent;
+}
+
+.header-container {
+    /* min-height: ; */
+    height: calc(100vh - 10rem);
+    min-height: 800px;
+}
+
+.header-bg {
+    clip-path: url(#my-clip-path);
+}
