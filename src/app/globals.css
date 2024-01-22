@@ -18,6 +18,9 @@ body {
     min-height: 800px;
 }
 
+.banner-job-radius {
+    border-radius: calc(100% - 1px);
+}
 .banner-job {
     width: calc(100% - 1px);
     height: calc(100% - 1px);

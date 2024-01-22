@@ -9,8 +9,7 @@ type HighlightProps = {
     return (
       <span
         className={`${className} font-bold bg-gradient-to-r from-blueOne via-blueTwo to-blueThree
-        bg-clip-text textTransparent font-gilroy`}
-        >
+        bg-clip-text textTransparent font-gilroy`}>
         {children}
       </span>
     );

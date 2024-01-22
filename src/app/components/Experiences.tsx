@@ -1,5 +1,10 @@
+'use client';
 import { Si42 } from "react-icons/si";
 import Job from "./Job";
+import { useEffect } from "react";
+import textFit from 'textfit';
+import { useInView } from "@react-spring/web";
+import { Slide } from "@mui/material";
 
 function HLine({direction = 'bg-gradient-to-r'}){
 
@@ -43,15 +48,27 @@ function MiddleLine(){
     )    
 }
 
+
+function Timeline(){
+    const [ref, InView] = useInView();
+    return (
+        <div ref={ref} className="w-[30%] flex flex-col h-full max-sm:hidden">
+                    <div className="h-[20%] max-sm:hidden"/>
+                <Slide direction='left' in={InView} timeout={600}>
+                    <div className="h-[100px] max-md:text-xl max-lg:text-3xl max-xl:text-4xl text-5xl
+                    w-full text-center flex flex-col justify-center items-center text-5 whitespace-nowrap max-sm:hidden">NOV 2021 - Present
+                    </div>
+                </Slide>
+            </div>
+    )
+}
+
 function ContainerExp(){
     return (
-        <div className="h-[800px] w-full mt-[5%] gap-[3%] flex justify-center">
+        <div className="h-[800px] max-sm:h-[400px] w-full mt-[5%] gap-[3%] flex justify-center">
             <Job/>
             <MiddleLine/>
-            <div className="w-[30%] flex flex-col h-full max-sm:hidden">
-                <div className="h-[20%]"/>
-                <div className="h-[100px] text-center flex flex-col justify-center items-center text-5xl whitespace-nowrap box">NOV 2021 - Present</div>
-            </div>
+            <Timeline/>
         </div>
     )
 }
@@ -59,7 +76,7 @@ function ContainerExp(){
 
 export default function Experiences(){
     return (
-        <div className="mt-[40px] h-[800px]">
+        <div id="Experience" className="mt-[40px] h-[800px]">
             <HeadExp />
             <ContainerExp />
         </div>

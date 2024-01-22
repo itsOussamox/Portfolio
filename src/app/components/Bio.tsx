@@ -22,7 +22,7 @@ function BioText(){
 
 export default function Bio(){
     return (
-       <div className="flex flex-col sm:flex-row items-center w-full mr-[2%]">
+       <div id="About" className="flex flex-col sm:flex-row items-center w-full mr-[2%]">
         <Laptop />
         <BioText />
        </div>
