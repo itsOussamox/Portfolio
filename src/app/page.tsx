@@ -10,8 +10,8 @@ export default function Home() {
     <main className='max-w-[1400px] w-full mx-auto'>
       <Header />
       <Bio />
-      <Experiences />
       <Skills />
+      <Experiences />
     </main>
   )
 }

@@ -7,6 +7,12 @@ export default function Job(){
     const [ref, InView] = useInView();
     useEffect(() => {     
         textFit(document.getElementsByClassName('box'))
+        window.addEventListener('resize', () => {
+            textFit(document.getElementsByClassName('box'))
+        })
+        return (
+            window.removeEventListener('resize', () => {})
+        )
     })
     return (
         <Slide direction='right' in={InView} timeout={600}>
@@ -15,12 +21,13 @@ export default function Job(){
                     <div className="h-full w-full bg-bannerColor flex flex-col gap-[1%] relative box ">
                         <h1 className=" text-white  text-center whitespace-nowrap mr-[36%] mt-[5%]">1337 Student</h1>
                         <h2 className="text-purple-500 whitespace-nowrap text-center max-md:ml-[1%] mt-[1%] mr-[36%]">Coding</h2>
-                        <ul className="text-white grow list-disc list-inside  ml-[2%] flex flex-col justify-center ">
+                        <ul className="text-white list-disc list-inside  ml-[2%] flex flex-col justify-center ">
                             <li>Thrived in the challenge-driven 1337 curriculum.</li>
                             <li>Mastering languages like C and C++, and building efficient software systems.</li>
                             <li>Engaged in pair programming, and developed strong teamwork skills in a collaborative coding environment.</li>
                         </ul>
                     </div>
+                    <h1 className='text-white opacity-[0.3]  sm:hidden'>NOV 2021 - Present</h1>
                 </div>
             </div>
         </Slide>
