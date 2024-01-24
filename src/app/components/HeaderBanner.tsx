@@ -1,11 +1,11 @@
 'use client';
 
-type HighlightProps = {
+export type HighlightProps = {
     children: React.ReactNode;
     className?: string;
   };
   
- export const Highlight = ({ children, className }: HighlightProps) => {
+const Highlight = ({ children, className }: HighlightProps) => {
     return (
       <span
         className={`${className} font-bold bg-gradient-to-r from-blueOne via-blueTwo to-blueThree

@@ -1,19 +1,34 @@
-import { Highlight } from "./HeaderBanner";
 import Laptop from "./Laptop";
 import Image from 'next/image'
+import { HighlightProps } from "@/app/components/HeaderBanner";
 import OpenTab from "@public/OpenTab.svg"
+import Link from "next/link";
+
+const Highlight = ({ children, className }: HighlightProps) => {
+    return (
+    <Link href={"https://github.com/itsOussamox"} target={"_blank"}>
+      <span
+        className={`${className} font-bold bg-gradient-to-r from-blueOne via-blueTwo to-blueThree
+        bg-clip-text textTransparent font-gilroy cursor-pointer`}>
+        {children}
+      </span>
+    </Link>
+    );
+  };
 
 function BioText(){
     return (
         <div className="text-center  sm:max-w-[40%] flex flex-col">
             <div>
-                <h1 className="text-4xl">A <span className="text-purple-500">Passion</span>.</h1>
+                <h1 className="text-4xl">About <span className="text-purple-500">Me</span>.</h1>
                 <p className="text-xl">My true joy lies in creating dynamic and interactive web experiences. From eye-catching animations to seamless transitions,
                 I believe in making the digital world an exciting place to explore.</p>
             </div>
             <div className="flex  justify-center gap-[1%] mt-[3%] ">
-                <Highlight className="font-gilroy sm:text-3xl md:text-3xl lg:text-4xl">View My Projects</Highlight>
-                <Image src={OpenTab} alt="OpenTab" className="h-[80%]" />
+                <Highlight className="font-gilroy sm:text-3xl md:text-3xl lg:text-4xl cursor-pointer">View My Projects</Highlight>
+                <Link href="https://github.com/itsOussamox" target="_blank">
+                    <Image src={OpenTab} alt="OpenTab" className="h-[80%]" />
+                </Link>
             </div>
         </div>
     )
