@@ -1,8 +1,9 @@
 'use client';
 import { Decal, Float, Image, OrbitControls, ScreenSpace, Text, useTexture } from "@react-three/drei";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import { animated, useSpring } from "@react-spring/three";
+import { degToRad } from "three/src/math/MathUtils.js";
 
 
 function SkillSphere(props : JSX.IntrinsicElements['mesh'] & {skill : string} & {decalPos : [number, number, number]}){
@@ -14,11 +15,8 @@ function SkillSphere(props : JSX.IntrinsicElements['mesh'] & {skill : string} & 
         scale: isHover ? [1.5, 1.5, 1.5] : [1, 1, 1] ,
     })
     useFrame((state, delta) => {
-        if(isHover){
+        if(isHover)
             textRef.current.lookAt(state.camera.position);
-        }// sphereRef.current.rotation.y += delta * 0.2;
-        // sphereRef.current.rotation.z += delta * 0.1;
-        // sphereRef.current.rotation.x += delta * 0.2;
     })
     return (
         <>
@@ -45,6 +43,7 @@ function SkillPlane(){
     // create an array of skills string
     const left = useRef<boolean>(false);
     const right = useRef<boolean>(false);
+    // const circleRef = useRef<THREE.Mesh>(null!);
     const skills = ['./skills/React.svg', './skills/ThreeJS.svg', './skills/SocketIO.svg',
     './skills/Tailwind.svg', './skills/TypeScript.svg', './skills/Javascript.svg'];
     const skillsPos : any = [[0.05, 0.25, 1],[0.1, 0, 1],[0.2, 0, 1],
@@ -75,7 +74,7 @@ function SkillPlane(){
     //         document.removeEventListener('keyup', () => {})
     //     }
     // })
-
+   
 
     useFrame((state, delta) => {
         if (right.current){
@@ -90,8 +89,12 @@ function SkillPlane(){
     return (
         <>
         <group ref={secondOrbit} position={[0, 0,-17]} rotation={[0,0, 0]}>
+            <mesh rotation={[0, 0, 0]} >
+                <torusGeometry  args={[12, 0.01, 30,200]}  />
+                <lineBasicMaterial color="#ffff8f" />
+            </mesh>
         {[...Array(4)].map((_, index) => {
-            const radius = 13;
+            const radius = 12;
             const angle = (index / 6) * Math.PI * 3;
             return (
                 <SkillSphere 
@@ -104,8 +107,12 @@ function SkillPlane(){
             })}
         </group>
         <group ref={firstOrbit} position={[0, 0,-16]}>
+            <mesh rotation={[0, 0, 0]} >
+                <torusGeometry  args={[7, 0.01, 30,200]}  />
+                <lineBasicMaterial color="#ffff8f" />
+            </mesh>
         {[...Array(6)].map((_, index) => {
-            const radius = 8;
+            const radius = 7;
             const angle = (index / 6) * Math.PI * 2;
             
             return (

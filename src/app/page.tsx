@@ -4,6 +4,7 @@ import Image from 'next/image'
 import mobilerect from '@public/rectmobile.svg'
 import Experiences from './components/Experiences'
 import Skills from './components/Skills'
+import Projects from './components/Projects'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Bio />
       <Skills />
       <Experiences />
+      <Projects />
     </main>
   )
 }

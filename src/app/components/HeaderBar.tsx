@@ -1,6 +1,7 @@
 'use client';
 import LogoText from '@/app/components/logoText';
 import BurgerMenu from './BurgerMenu';
+import Link from 'next/link';
 
 export default function HeaderBar (){
     return (
@@ -9,10 +10,18 @@ export default function HeaderBar (){
                 <LogoText/>
             </div>
             <div className="flex flex-row font-medium grow text-lg gap-[8%] justify-start items-center max-sm:hidden">
-                <a className="">About</a>
-                <a className="">Skills</a>
-                <a className="">Experiences</a>
-                <a className="">Projects</a>
+                <Link scroll={false} href={"/About"} className=""
+                onClick={(e) => {e.preventDefault(); document.getElementById("About")?.scrollIntoView({ behavior: "smooth" });}}
+                >About</Link>
+                <Link href={"#Skills"} scroll={false} className=""
+                onClick={(e) => {e.preventDefault(); document.getElementById("Skills")?.scrollIntoView({ behavior: "smooth" });}}
+                >Skills</Link>
+                <Link href={"#Experience"} scroll={false} className=""
+                onClick={(e) => {e.preventDefault(); document.getElementById("Experience")?.scrollIntoView({ behavior: "smooth" });}}
+                >Experiences</Link>
+                <Link href={"#Projects"} scroll={false} className=""
+                onClick={(e) => {e.preventDefault(); document.getElementById("Projects")?.scrollIntoView({ behavior: "smooth" });}}
+                >Projects</Link>
             </div>
 
             <div className="relative flex justify-end right-[1%] max-sm:hidden">

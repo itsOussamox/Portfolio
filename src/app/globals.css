@@ -2,9 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* hide scroll bar */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
 
 body {
+    scroll-behavior: smooth;
     color: #fff;
     background: rgba(14, 17, 21, 1);
 }

@@ -1,8 +1,6 @@
 'use client';
 import { Si42 } from "react-icons/si";
 import Job from "./Job";
-import { useEffect } from "react";
-import textFit from 'textfit';
 import { useInView } from "@react-spring/web";
 import { Slide } from "@mui/material";
 
@@ -65,7 +63,7 @@ function Timeline(){
 
 function ContainerExp(){
     return (
-        <div className="h-[800px] max-sm:h-[400px] w-full mt-[5%] gap-[3%] flex justify-center">
+        <div className="h-[600px] max-sm:h-[300px] w-full mt-[5%] gap-[3%] flex justify-center">
             <Job/>
             <MiddleLine/>
             <Timeline/>
