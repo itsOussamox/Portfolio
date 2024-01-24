@@ -74,7 +74,7 @@ function ContainerExp(){
 
 export default function Experiences(){
     return (
-        <div id="Experience" className="mt-[40px] h-[800px]">
+        <div id="Experience" className="mt-[40px] h-[800px] max-sm:h-[400px]">
             <HeadExp />
             <ContainerExp />
         </div>

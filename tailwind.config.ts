@@ -16,6 +16,7 @@ const config: Config = {
         blueTwo: 'rgba(140, 238, 214, 1)',
         blueThree: 'rgba(130, 224, 249, 1)',
         bannerColor: 'rgba(23, 27, 34, 0.4)',
+        // cardColor : '#404040',
         menuBg: 'rgba(0, 0, 0, 0.3)',
       }
     },
