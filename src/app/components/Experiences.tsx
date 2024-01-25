@@ -15,7 +15,7 @@ function HeadExp(){
     return (
             <div className="flex flex-row justify-center items-center gap-[2%]">
                 <HLine direction='bg-gradient-to-r'/>
-                <h1 className="sm:text-6xl md:text-6xl lg:text-7xl text-center">My Experiences</h1>
+                    <h1 className="sm:text-6xl md:text-6xl lg:text-7xl text-center">My Experiences</h1>
                 <HLine direction="bg-gradient-to-l"/>
             </div>
     )
