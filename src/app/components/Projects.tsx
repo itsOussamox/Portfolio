@@ -61,8 +61,9 @@ function Project(props : ProjectProps){
 
 export default function Projects(){
     return (
-        <div  className="w-full h-[800px] max-sm:[600px]">
+        <div  className="w-full h-[800px] max-sm:[600px] relative">
             <div className="ml-[2%] max-sm:ml-[6%] sm:text-6xl md:text-6xl lg:text-7xl">My Projects</div>
+            <div className="absolute bottom-0 left-0 rounded-full h-[50%] w-[30%] bg-[#12A2FF] blur-[350px] opacity-[0.3]"/>
             <div id="Projects" className="mt-[3%] overflow-scroll overflow-y-hidden gap-6 no-scrollbar flex h-[600px] max-sm:h-[400px] w-full snap-x snap-mandatory relative "> 
                 <div className="snap-start shrink-0 w-[20%] h-[95%] "></div>
                 

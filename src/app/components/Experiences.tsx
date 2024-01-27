@@ -63,7 +63,8 @@ function Timeline(){
 
 function ContainerExp(){
     return (
-        <div className="h-[600px] max-sm:h-[300px] w-full mt-[5%] gap-[3%] flex justify-center">
+        <div className="relative h-[600px] max-sm:h-[300px] w-full mt-[5%] gap-[3%] flex justify-center">
+            <div className="absolute right-[-3%] top-[50%] w-[30%] h-[30%] bg-[#915DFF] blur-[300px] opacity-[.5]"></div>
             <Job/>
             <MiddleLine/>
             <Timeline/>

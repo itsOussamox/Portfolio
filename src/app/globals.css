@@ -14,6 +14,7 @@
 
 body {
     scroll-behavior: smooth;
+    overflow-x: hidden;
     max-width: 100vw;
     color: #fff;
     background: rgba(14, 17, 21, 1);
