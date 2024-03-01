@@ -20,6 +20,10 @@ body {
     background: rgba(14, 17, 21, 1);
 }
 
+.corner {
+    left : calc(100% - 60vw);
+    top : calc(100% - 50vh);
+}
 
 .textTransparent {
     -webkit-text-fill-color: transparent;

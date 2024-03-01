@@ -6,16 +6,19 @@ import Experiences from './components/Experiences'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 export default function Home() {
   return (
-    <main className='max-w-[1400px] w-full mx-auto'>
+    <main className='container max-w-[1400px] w-full mx-auto relative'>
       <Header />
       <Bio />
       <Skills />
       <Experiences />
       <Projects />
       <Contact />
+      <Footer />
+
     </main>
   )
 }

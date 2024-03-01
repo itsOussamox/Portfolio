@@ -1,6 +1,7 @@
 'use client';
 import { use, useEffect, useRef, useState } from "react";
 import { Grow } from "@mui/material";
+import Earth from "./Earth";
 
 interface ContactButtonProps {
     title: string;
@@ -103,9 +104,11 @@ export default function Contact() {
     }
 
     return (
-        <div id="Contact" className="flex flex-col w-[60%] ml-[4%] max-sm:h-[500px] h-[800px]">
+        <div className="w-full h-full relative">
+            <Earth />
+        <div id="Contact" className=" flex flex-col w-[60%] ml-[4%] max-sm:h-[500px] h-[800px]">
             <h1 className="max-sm:text-4xl max-md:text-5xl max-lg:text-6xl text-7xl mr-[2%]">Let's get in touch!</h1>
-            <div className="flex flex-col mt-[3%] w-full h-full">
+            <div className="z-20 flex flex-col mt-[3%] w-full h-full">
                 <h1 className="max-sm:text-lg max-md:text-xl max-lg:text-2xl text-3xl mr-[2%]">I'm interested in</h1>
                 <div id="ContactButtons" className="mt-[5%] gap-[5%] flex items-center w-full h-[10%]">
                     <ContactButton setSelected={setSelect} selected={select} title="Freelance"/>
@@ -142,6 +145,7 @@ export default function Contact() {
                 </div>
             </div>
             {submit && <SubmitNotif setSubmit={setSubmit} submit={submit}/>}
+        </div>
         </div>
     )
 }
