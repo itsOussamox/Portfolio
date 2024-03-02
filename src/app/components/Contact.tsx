@@ -106,7 +106,7 @@ export default function Contact() {
     return (
         <div className="w-full h-full relative">
             <Earth />
-        <div id="Contact" className=" flex flex-col w-[60%] ml-[4%] max-sm:h-[500px] h-[800px]">
+        <div id="Contact" className=" flex flex-col w-[60%] max-sm:w-full ml-[4%] max-sm:h-[500px] h-[800px]">
             <h1 className="max-sm:text-4xl max-md:text-5xl max-lg:text-6xl text-7xl mr-[2%]">Let's get in touch!</h1>
             <div className="z-20 flex flex-col mt-[3%] w-full h-full">
                 <h1 className="max-sm:text-lg max-md:text-xl max-lg:text-2xl text-3xl mr-[2%]">I'm interested in</h1>
@@ -133,7 +133,7 @@ export default function Contact() {
                         onChange={(e) => {e.preventDefault(); messageRef.current!.value = e.target.value}}/>
                     </div>
                     <button onClick={() => handleSubmit()} 
-                    type='button' className='p-0.5 bg-gradient-to-r from-blueOne via-blueTwo to-blueThree rounded-xl w-[20%] h-[12%] hover:opacity-[.8]'>
+                    type='button' className='p-0.5 bg-gradient-to-r from-blueOne via-blueTwo to-blueThree rounded-xl w-[20%] max-sm:w-[60%] h-[12%] hover:opacity-[.8]'>
                         <div className='bg-black rounded-xl text-white w-full h-full'>
                             <div className="bg-[#12A2FF]/[.11] h-full w-full flex items-center justify-center rounder-2xl">
                                 <div className="bg-gradient-to-r from-blueOne via-blueTwo to-blueThree text-transparent bg-clip-text">

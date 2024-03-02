@@ -25,7 +25,9 @@ export default function HeaderBar (){
             </div>
 
             <div className="relative flex justify-end right-[1%] max-sm:hidden">
-                <Link href={"#Contact"} type='button' className='p-0.5 bg-gradient-to-r from-blueOne via-blueTwo to-blueThree rounded-xl'>
+                <Link href={"#Contact"} scroll={false} 
+                onClick={(e) => {e.preventDefault(); document.getElementById("Contact")?.scrollIntoView({ behavior: "smooth" });}}
+                type='button' className='p-0.5 bg-gradient-to-r from-blueOne via-blueTwo to-blueThree rounded-xl'>
                     <div className='px-4 py-1 bg-black rounded-xl text-white'>Contact</div>
                 </Link>
             </div>

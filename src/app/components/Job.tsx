@@ -21,7 +21,7 @@ export default function Job(){
                     <div className="h-full w-full bg-bannerColor flex flex-col gap-[1%] relative box ">
                         <h1 className=" text-white  text-center whitespace-nowrap mr-[36%] mt-[5%]">1337 Student</h1>
                         <h2 className="text-purple-500 whitespace-nowrap text-center max-md:ml-[1%] mt-[1%] mr-[36%]">Coding</h2>
-                        <ul className="text-white list-disc list-inside  ml-[2%] flex flex-col justify-center ">
+                        <ul className="text-white h-full list-disc list-inside  ml-[2%] flex flex-col justify-center ">
                             <li>Thrived in the challenge-driven 1337 curriculum.</li>
                             <li>Mastering languages like C and C++, and building efficient software systems.</li>
                             <li>Engaged in pair programming, and developed strong teamwork skills in a collaborative coding environment.</li>

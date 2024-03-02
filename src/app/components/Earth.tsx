@@ -7,12 +7,9 @@ export default function Earth(){
     useEffect(() => {
         const g = globeRef.current;
         if (g) {
-            console.log(g.controls());
             g.controls().autoRotate = true;
             g.controls().enableZoom = false;
             g.controls().autoRotateSpeed = 0.5;
-            //zoom in 
-            console.log(g.camera().position);
             g.pointOfView({lat: 0, lng: 0, altitude: 1.7});
         }
         window.addEventListener('resize', () => {
@@ -20,13 +17,12 @@ export default function Earth(){
             if (width > 919)
                 width = 919;
             setScreen(width);
-        });
+        });     
         return () => window.removeEventListener('resize', () => {});
     }, []);
     return (
-       <div className='absolute top-1/4 left-[60%]'>
+       <div className='absolute top-1/4 left-[60%] max-sm:left-[50%] max-sm:top-[5%]'>
             <Globe
-            
             height={sWidth/1.5}
             width={sWidth/1.5}
             ref={globeRef}

@@ -10,15 +10,17 @@ import Footer from './components/Footer'
 
 export default function Home() {
   return (
-    <main className='container max-w-[1400px] w-full mx-auto relative'>
+    <>
+    <main className='container max-w-[1400px] w-full mx-auto relative max-[1400px]:overflow-hidden'>
       <Header />
       <Bio />
       <Skills />
       <Experiences />
       <Projects />
       <Contact />
-      <Footer />
 
     </main>
+      <Footer />
+    </>
   )
 }
