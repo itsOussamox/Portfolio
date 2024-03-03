@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Highlight = ({ children, className }: HighlightProps) => {
     return (
-    <Link href={"https://github.com/itsOussamox"} target={"_blank"}>
+    <Link href={"https://peach-shauna-85.tiiny.site/"} target={"_blank"}>
       <span
         className={`${className} font-bold bg-gradient-to-r from-blueOne via-blueTwo to-blueThree
         bg-clip-text textTransparent font-gilroy cursor-pointer`}>
@@ -25,8 +25,8 @@ function BioText(){
                 I believe in making the digital world an exciting place to explore.</p>
             </div>
             <div className="flex  justify-center gap-[1%] mt-[3%] ">
-                <Highlight className="font-gilroy sm:text-3xl md:text-3xl lg:text-4xl cursor-pointer">View My Projects</Highlight>
-                <Link href="https://github.com/itsOussamox" target="_blank">
+                <Highlight className="font-gilroy sm:text-3xl md:text-3xl lg:text-4xl cursor-pointer">View My Resume</Highlight>
+                <Link href="https://peach-shauna-85.tiiny.site/" target="_blank">
                     <Image src={OpenTab} alt="OpenTab" className="h-[80%]" />
                 </Link>
             </div>

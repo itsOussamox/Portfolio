@@ -8,8 +8,8 @@ import { SlSocialInstagram } from "react-icons/sl";
 
 const Footer = () => {
   return (
-    <div className='h-[200px] bg-gradient-to-t from-black flex-col gap-[4%] justify-center'>
-      <div className='flex flex-row justify-center items-center gap-[1%] h-[40%]'>
+    <div className='h-[200px] bg-gradient-to-t from-black flex-col gap-[4%] justify-center overflow-y-hidden'>
+      <div className='flex flex-row justify-center items-center gap-[4%] h-[40%]'>
         <Link href={"https://github.com/itsOussamox"}  target={"_blank"}>
           <SlSocialGithub className="size-[20px] text-white"/>
         </Link>
@@ -23,7 +23,7 @@ const Footer = () => {
           <SlSocialInstagram className="size-[20px] text-white"/>
         </Link>
       </div>
-      <div className="w-full flex flex-row h-[30%] font-medium grow text-lg gap-[8%] justify-center items-center max-sm:hidden">
+      <div className="w-full flex text-white/[.7] flex-row h-[30%] font-medium grow text-lg gap-[8%] justify-center items-center max-sm:hidden">
                 <Link scroll={false} href={"/About"} className=""
                 onClick={(e) => {e.preventDefault(); document.getElementById("About")?.scrollIntoView({ behavior: "smooth" });}}
                 >About</Link>
@@ -37,7 +37,7 @@ const Footer = () => {
                 onClick={(e) => {e.preventDefault(); document.getElementById("Projects")?.scrollIntoView({ behavior: "smooth" });}}
                 >Projects</Link>
       </div>
-      <div className=' text-[15px] h-[30%] text-opacity-5 text-center align-text-bottom'>
+      <div className=' text-[12px] h-[30%] text-white/[.4] text-center mt-[3%]'>
       © Oussama Bouadel. All Rights Reserved
       </div>
 

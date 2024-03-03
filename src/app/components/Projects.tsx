@@ -72,7 +72,7 @@ export default function Projects(){
                 a bot system, a tournament system, and a lot more."
                 pImage={Pong}
                 pType="Web Project"
-                pLink="https://github.com/aymanelyamoun/ft_transcendence">
+                pLink="https://github.com/itsOussamox/ft_transcendence">
                     <Tool tool="NextJS"/>
                     <Tool tool="NestJS"/>
                     <Tool tool="React"/>

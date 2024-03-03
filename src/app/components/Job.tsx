@@ -2,38 +2,23 @@
 import { Slide } from '@mui/material';
 import { useInView } from '@react-spring/web';
 import { useEffect } from 'react';
-import textFit from 'textfit';
+import  textFit  from 'textfit';
 export default function Job(){
     const [ref, InView] = useInView();
-    useEffect(() => {     
-        textFit(document.getElementsByClassName('box'))
-        window.addEventListener('resize', () => {
-            textFit(document.getElementsByClassName('box'))
-        })
-        return (
-            window.removeEventListener('resize', () => {})
-        )
-    })
     return (
-        <Slide direction='right' in={InView} timeout={600}>
-            <div ref={ref} className="w-[45%] sm:w-[35%] h-[300px] sm:h-[600px] bg-gradient-to-r from-blueOne via-blueTwo to-blueThree flex justify-center items-center rounded-[5%]">
+            <div ref={ref} className="w-[50%] min-w-[200px] sm:w-[40%] h-auto bg-gradient-to-r from-blueOne via-blueTwo to-blueThree flex justify-center items-center rounded-[5%]">
                 <div className="bg-black banner-job rounded-[5%]">
-                    <div className="h-full w-full bg-bannerColor flex flex-col gap-[1%] relative box ">
-                        <h1 className=" text-white  text-center whitespace-nowrap mr-[36%] mt-[5%]">1337 Student</h1>
-                        <h2 className="text-purple-500 whitespace-nowrap text-center max-md:ml-[1%] mt-[1%] mr-[36%]">Coding</h2>
-                        <ul className="text-white h-full list-disc list-inside  ml-[2%] flex flex-col justify-center ">
-                            <li>Thrived in the challenge-driven 1337 curriculum.</li>
-                            <li>Mastering languages like C and C++, and building efficient software systems.</li>
-                            <li>Engaged in pair programming, and developed strong teamwork skills in a collaborative coding environment.</li>
-                        </ul>
+                    <div className="h-full  w-full bg-bannerColor flex flex-col gap-[1%] relative  rounded-[5%]">
+                        <h1 className=" text-white max-[474px]:text-2xl max-[350px]:text-xl md:text-4xl lg:text-5xl whitespace-nowrap text-3xl font-medium text-start ml-[10%] mr-[2%] mt-[5%]">1337 Student</h1>
+                        <h2 className="text-purple-500 md:text-3xl max-[474px]:text-xl lg:text-4xl text-2xl font-medium text-start ml-[10%]">Coding</h2>
+                            <ul className="gap-[3%] ul-max-h h-full leading-3 grow  text-white list-disc list-inside mt-[4%] mb-[1%] ml-[10%] flex flex-col mr-[10%] box">
+                                <li className='h-[33%] max-[474px]:text-xs text-ellipsis max-sm:text-sm md:text-2xl lg:text-3xl text-xl font-extralight'>Thrived in the challenge-driven 1337 Coding School curriculum.</li>
+                                <li className='h-[33%] max-[474px]:text-xs text-ellipsis max-sm:text-sm md:text-2xl lg:text-3xl text-xl font-extralight'>Mastering languages like C and C++, and building efficient software systems.</li>
+                                <li className='h-[33%] max-[474px]:text-xs text-ellipsis max-sm:text-sm md:text-2xl lg:text-3xl text-xl font-extralight'>Developed strong teamwork skills, engaging in pair programming system.</li>
+                            </ul>
                     </div>
                     <h1 className='text-white opacity-[0.3]  sm:hidden'>NOV 2021 - Present</h1>
                 </div>
             </div>
-        </Slide>
     )
 }
-// text-5xl max-sm:text-sm max-md:text-lg 
-// text-3xl
-
-//text-2xl max-sm:text-sm max-md:text-lg
