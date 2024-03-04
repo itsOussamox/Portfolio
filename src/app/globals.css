@@ -54,6 +54,10 @@ body {
     scrollbar-width: none;
 }
 
+.tool-size {
+    font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+}
+
 .h1 { 
     display: block;
     font-size: 2em;
