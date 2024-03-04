@@ -136,7 +136,7 @@ export default function Contact() {
                     type='button' className='p-0.5 bg-gradient-to-r from-blueOne via-blueTwo to-blueThree rounded-xl w-[20%] max-sm:w-[60%] h-[12%] hover:opacity-[.8]'>
                         <div className='bg-black rounded-xl text-white w-full h-full'>
                             <div className="bg-[#12A2FF]/[.11] h-full w-full flex items-center justify-center rounder-2xl">
-                                <div className="bg-gradient-to-r from-blueOne via-blueTwo to-blueThree text-transparent bg-clip-text">
+                                <div className="bg-gradient-to-r from-blueOne via-blueTwo to-blueThree text-transparent font-\ bg-clip-text">
                                     Submit
                                 </div>
                             </div>

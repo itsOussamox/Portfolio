@@ -23,6 +23,10 @@ export const gilroy = localFont({
             weight: "500",
         },
         {
+            path : '../../../public/fonts/Gilroy-SemiBold.ttf',
+            weight: "600",
+        },
+        {
             path : '../../../public/fonts/Gilroy-UltraLight.ttf',
             weight: "200",
         }
