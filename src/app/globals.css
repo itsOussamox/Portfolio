@@ -54,6 +54,10 @@ body {
     scrollbar-width: none;
 }
 
+.input-size {
+    font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+}
+
 .tool-size {
     font-size: clamp(0.8rem, 1.5vw, 1.5rem);
 }

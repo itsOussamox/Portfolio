@@ -2,6 +2,7 @@
 import LogoText from '@/app/components/logoText';
 import BurgerMenu from './BurgerMenu';
 import Link from 'next/link';
+import {motion} from 'framer-motion';
 
 export default function HeaderBar (){
     return (
@@ -24,13 +25,26 @@ export default function HeaderBar (){
                 >Projects</Link>
             </div>
 
-            <div className="relative flex justify-end right-[1%] max-sm:hidden">
+            <motion.div 
+            whileHover={{scale: 1.1, transition:{type: "spring", stiffness: 300, duration: 0.5}}}
+            whileTap={{scale: 0.9}}
+            className="group relative flex justify-end right-[1%] max-sm:hidden">
                 <Link href={"#Contact"} scroll={false} 
                 onClick={(e) => {e.preventDefault(); document.getElementById("Contact")?.scrollIntoView({ behavior: "smooth" });}}
                 type='button' className='p-0.5 bg-gradient-to-r from-blueOne via-blueTwo to-blueThree rounded-xl'>
-                    <div className='px-4 py-1 bg-black rounded-xl text-white'>Contact</div>
+                    <motion.div 
+                    whileHover={{color: "black", backgroundColor: "transparent"}}
+                    style={{
+                        padding: "0.25rem 1rem",
+                        backgroundColor: "black",
+                        backgroundPosition: "left",
+                        borderRadius: "0.75rem",
+                        color: "white",
+                        x: 0,
+                    }}
+                    >Contact</motion.div>
                 </Link>
-            </div>
+            </motion.div>
             <BurgerMenu />
         </div>
     )

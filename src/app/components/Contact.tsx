@@ -2,7 +2,7 @@
 import { use, useEffect, useRef, useState } from "react";
 import { Grow } from "@mui/material";
 import Earth from "./Earth";
-
+import { motion } from "framer-motion";
 interface ContactButtonProps {
     title: string;
     selected: string;
@@ -15,10 +15,10 @@ function ContactButton({title, selected, setSelected}: ContactButtonProps){
             onClick={() => setSelected(title)}>
             {selected === title && (
             <Grow in={(selected === title)} timeout={500} enter>
-                <div className=" absolute h-full w-full rounded-3xl bg-gradient-to-r px-3 top-0 right-0 from-blueOne via-blueTwo to-blueThree"/>
+                <div className="absolute h-full w-full rounded-3xl bg-gradient-to-r px-3 top-0 right-0 from-blueOne via-blueTwo to-blueThree"/>
             </Grow>
             )}
-            <div className={`absolute h-full w-full top-[16%] right-0 ${selected === title ? "text-black" : "text-white/[0.7]"}`}>
+            <div className={`absolute font-medium h-full w-full top-0 flex justify-center items-center right-0 ${selected === title ? "text-black" : "text-white/[0.7]"}`}>
                 {title}
             </div>
         </button>
@@ -104,44 +104,48 @@ export default function Contact() {
     }
 
     return (
-        <div className="w-full h-full relative">
+        <div className="w-full h-full relative ml-[4%] ">
             <Earth />
-        <div id="Contact" className=" flex flex-col w-[60%] max-sm:w-full ml-[4%] max-sm:h-[500px] h-[800px]">
+        <div id="Contact" className="flex flex-col w-[60%] max-sm:w-full max-sm:h-[500px] h-[800px]">
             <h1 className="max-sm:text-4xl max-md:text-5xl max-lg:text-6xl text-7xl mr-[2%]">Let's get in touch!</h1>
             <div className="z-20 flex flex-col mt-[3%] w-full h-full">
-                <h1 className="max-sm:text-lg max-md:text-xl max-lg:text-2xl text-3xl mr-[2%]">I'm interested in</h1>
+                <h1 className="max-sm:text-lg max-md:text-xl max-lg:text-2xl font-extralight tracking-[2%] text-3xl mr-[2%]">I'm interested in</h1>
                 <div id="ContactButtons" className="mt-[5%] gap-[5%] flex items-center w-full h-[10%]">
                     <ContactButton setSelected={setSelect} selected={select} title="Freelance"/>
                     <ContactButton setSelected={setSelect} selected={select} title="Part-time"/>
                     <ContactButton setSelected={setSelect} selected={select} title="Full-time"/>
                 </div>
-                <div className="flex flex-col h-full w-full mt-[5%] gap-[4%]">
+                <div className="flex flex-col h-full w-[90%] mt-[5%] gap-[4%] font-light">
                     <div className="bg-blueTwo/[0] w-full h-[25%] flex flex-col justify-center">
-                        <input ref={nameRef} placeholder="Enter your name" className="bg-transparent w-full h-[50%] text-white/[0.7] text-3xl outline-none pl-[2%]"
+                        <input ref={nameRef} placeholder="Enter your name" className="input-size bg-transparent w-full h-[50%] text-white/[0.7] text-3xl outline-none pl-[2%]"
                         onChange={(e) => {e.preventDefault(); nameRef.current!.value  = e.target.value}}
                         />
                         <div className="h-[1px] w-full bg-white/[0.3]"/>
                     </div>
                     <div className="bg-blueTwo/[0] w-full h-[25%] flex flex-col justify-center">
-                        <input ref={emailRef} placeholder="Enter your email" className="bg-transparent w-full h-[50%] text-white/[0.7] text-3xl outline-none pl-[2%]"
+                        <input ref={emailRef} placeholder="Enter your email" className="input-size bg-transparent w-full h-[50%] text-white/[0.7] text-3xl outline-none pl-[2%]"
                         onChange={(e) => {e.preventDefault(); emailRef.current!.value = e.target.value}}/>
                         <div className="h-[1px] w-full bg-white/[0.3]"/>
                     </div>
                     <div className="bg-blueTwo/[0] w-full h-[50%] flex flex-col justify-center">
-                        <textarea ref={messageRef} className="mt-[2%] resize-none h-full bg-transparent text-white/[0.7] text-3xl outline outline-1 outline-white/[.3] pl-[2%]" 
+                        <textarea ref={messageRef} className="input-size mt-[2%] resize-none h-full bg-transparent text-white/[0.7] text-3xl outline outline-1 outline-white/[.3] pl-[2%]" 
                         placeholder="Tell me about your project"
                         onChange={(e) => {e.preventDefault(); messageRef.current!.value = e.target.value}}/>
                     </div>
-                    <button onClick={() => handleSubmit()} 
-                    type='button' className='p-0.5 bg-gradient-to-r from-blueOne via-blueTwo to-blueThree rounded-xl w-[20%] max-sm:w-[60%] h-[12%] hover:opacity-[.8]'>
-                        <div className='bg-black rounded-xl text-white w-full h-full'>
+                    <motion.button 
+                        whileTap={{scale: 0.9}}
+                        whileHover={{scale: 1.1, transition:{type: "spring", stiffness: 300, duration: 0.5}}}
+                        onClick={() => handleSubmit()} 
+                        type='button'
+                        className='p-0.5 bg-gradient-to-r from-blueOne via-blueTwo to-blueThree rounded-xl w-[20%] max-sm:w-full h-[12%] hover:opacity-[.8]'>
+                        <div className='group bg-black rounded-xl text-white w-full h-full hover:bg-transparent'>
                             <div className="bg-[#12A2FF]/[.11] h-full w-full flex items-center justify-center rounder-2xl">
-                                <div className="bg-gradient-to-r from-blueOne via-blueTwo to-blueThree text-transparent font-\ bg-clip-text">
+                                <div className="group-hover:text-black bg-gradient-to-r from-blueOne via-blueTwo to-blueThree text-transparent font-semibold bg-clip-text">
                                     Submit
                                 </div>
                             </div>
                         </div>
-                    </button>
+                    </motion.button>
                 </div>
             </div>
             {submit && <SubmitNotif setSubmit={setSubmit} submit={submit}/>}

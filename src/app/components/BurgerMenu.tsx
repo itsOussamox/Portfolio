@@ -1,6 +1,6 @@
 import Hamburger from 'hamburger-react'
 import { useState } from 'react'
-import { Dialog, Slide, DialogActions, Grow } from '@mui/material';
+import { motion,AnimatePresence } from 'framer-motion'
 
 interface MenuProps {
     isOpen: boolean;
@@ -20,11 +20,11 @@ function BurgerElement({isOpen, setOpen, value, onClick, checked}: MenuElementPr
 
 
     return (
-        <div className={`h-[8%] w-full flex items-center ${checkedStyle}`} onClick={(e) => {onClick(value)}}>
-            <div className='ml-[10%]'>
+        <motion.div className={`h-[8%] w-full flex items-center ${checkedStyle}`} onClick={(e) => {onClick(value)}}>
+            <motion.div className='ml-[10%]'>
                 {value}
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     )
 
 }
@@ -32,26 +32,31 @@ function BurgerElement({isOpen, setOpen, value, onClick, checked}: MenuElementPr
 
 function Menu({isOpen, setOpen}: MenuProps){
     const [checked, setChecked] = useState<string>('Home')
-
+    const opacity = isOpen ? 'opacity-[0.3]' : 'opacity-0'
     const BurgerClick = (value:string) => {
         document.getElementById(value)?.scrollIntoView({behavior: 'smooth'})
         setChecked(value)
         setOpen(false)
     }
     return (
-            <div className='bg-menuBg h-full w-full fixed top-0 bottom-0 left-0 right-0  z-[50]'>
-                <Slide direction='left' in={isOpen} timeout={600}>
-                    <div className='w-[80%] h-full ml-auto bg-[#171B22CC] border-l-[1px] border-gray-600 flex flex-col'>
-                        <div className='h-full w-full mt-[20%]'>
+        <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                    initial={{x: '  100%', opacity: 0}}
+                    animate={{x: '0%', opacity: 1}}
+                    exit={{x: '100%', opacity: 0}}
+                    transition={{type: 'tween', duration: 0.5, ease: 'easeInOut'}}
+                    className='w-[80%] fixed top-0 bottom-0 left-0 right-0 h-full ml-auto bg-[#171B22CC] border-l-[1px] border-gray-600 flex flex-col'>
+                        <motion.div className='h-full w-full mt-[20%]'>
                             <BurgerElement checked={checked} onClick={BurgerClick} isOpen={isOpen} setOpen={setOpen} value={'Home'}/>
                             <BurgerElement checked={checked} onClick={BurgerClick} isOpen={isOpen} setOpen={setOpen} value={'About'}/>
                             <BurgerElement checked={checked} onClick={BurgerClick} isOpen={isOpen} setOpen={setOpen} value={'Skills'}/>
                             <BurgerElement checked={checked} onClick={BurgerClick} isOpen={isOpen} setOpen={setOpen} value={'Experience'}/>
                             <BurgerElement checked={checked} onClick={BurgerClick} isOpen={isOpen} setOpen={setOpen} value={'Projects'}/>
-                        </div>
-                    </div>
-                </Slide>
-            </div>
+                        </motion.div>
+                    </motion.div>
+                    )}
+        </AnimatePresence>
     )
 }
 
@@ -69,9 +74,7 @@ export default function BurgerMenu(){
                     size={20} duration={0.4} direction='left'/>
                 </div>
             </div>
-            {isOpen && (
-                <Menu isOpen={isOpen} setOpen={setOpen}></Menu>
-            )}
+            <Menu isOpen={isOpen} setOpen={setOpen}/>
         </div>
     )
 }
