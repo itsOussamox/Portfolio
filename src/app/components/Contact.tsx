@@ -18,7 +18,7 @@ function ContactButton({title, selected, setSelected}: ContactButtonProps){
                 <div className="absolute h-full w-full rounded-3xl bg-gradient-to-r px-3 top-0 right-0 from-blueOne via-blueTwo to-blueThree"/>
             </Grow>
             )}
-            <div className={`absolute font-medium h-full w-full top-0 flex justify-center items-center right-0 ${selected === title ? "text-black" : "text-white/[0.7]"}`}>
+            <div className={`absolute max-[350px]:text-xs max-sm:text-md font-normal whitespace-nowrap h-full w-full top-0 flex justify-center items-center right-0 ${selected === title ? "text-black" : "text-white/[0.7]"}`}>
                 {title}
             </div>
         </button>

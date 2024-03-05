@@ -10,19 +10,27 @@ export default function HeaderBar (){
             <div className="flex w-[11%] h-[60px]">
                 <LogoText/>
             </div>
-            <div className="flex flex-row font-medium grow text-lg gap-[8%] justify-start items-center max-sm:hidden">
+            <div className="flex flex-row font-normal grow text-lg gap-[8%] justify-start items-center max-sm:hidden">
                 <Link scroll={false} href={"/About"} className=""
                 onClick={(e) => {e.preventDefault(); document.getElementById("About")?.scrollIntoView({ behavior: "smooth" });}}
-                >About</Link>
+                ><motion.div style={{height: "100%", width: "100%"}}
+                whileHover={{ borderBottom: "1px solid white", transition: {type: "spring", stiffness: 300, duration: 0.5}}}
+                >About</motion.div></Link>
                 <Link href={"#Skills"} scroll={false} className=""
                 onClick={(e) => {e.preventDefault(); document.getElementById("Skills")?.scrollIntoView({ behavior: "smooth" });}}
-                >Skills</Link>
+                ><motion.div style={{height: "100%", width: "100%"}}
+                whileHover={{ borderBottom: "1px solid white", transition: {type: "spring", stiffness: 300, duration: 0.5}}}
+                >Skills</motion.div></Link>
                 <Link href={"#Experience"} scroll={false} className=""
                 onClick={(e) => {e.preventDefault(); document.getElementById("Experience")?.scrollIntoView({ behavior: "smooth" });}}
-                >Experiences</Link>
+                ><motion.div style={{height: "100%", width: "100%"}}
+                whileHover={{ borderBottom: "1px solid white", transition: {type: "spring", stiffness: 300, duration: 0.5}}}
+                >Experiences</motion.div></Link>
                 <Link href={"#Projects"} scroll={false} className=""
                 onClick={(e) => {e.preventDefault(); document.getElementById("Projects")?.scrollIntoView({ behavior: "smooth" });}}
-                >Projects</Link>
+                ><motion.div style={{height: "100%", width: "100%"}}
+                whileHover={{ borderBottom: "1px solid white", transition: { duration: 0.2, ease: "easeInOut"}}}
+                >Projects</motion.div></Link>
             </div>
 
             <motion.div 

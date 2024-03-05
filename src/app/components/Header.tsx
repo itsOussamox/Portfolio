@@ -9,7 +9,7 @@ import HeaderModels from "./HeaderModels";
 export default function Header()
 {
     return (
-        <header className="flex flex-col relative header-container">
+        <header className="flex flex-col relative header-container mx-auto">
             <HeaderBackground />
             <HeaderModels />
             <HeaderBar />
