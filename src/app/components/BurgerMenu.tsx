@@ -68,7 +68,7 @@ export default function BurgerMenu(){
     }
     return (
         <div className={`sm:hidden ${burgerFixed} right-0 h-full w-[5%] flex-col z-[99999]`}>
-            <div className="sm:hidden flex self-end h-full w-[10%] mr-[10%]">
+            <div className="sm:hidden flex  h-full w-[10%] mr-[10%]">
                 <div className='h-full w-full flex flex-col justify-center items-center z-[99999]'>
                     <Hamburger toggled={isOpen} toggle={isToggled} rounded label='Show menu'
                     size={20} duration={0.4} direction='left'/>

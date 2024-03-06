@@ -6,8 +6,8 @@ import {motion} from 'framer-motion';
 
 export default function HeaderBar (){
     return (
-        <div className='w-full flex flex-row sm:gap-[5%] items-center mt-[2%]  max-sm:justify-between'>
-            <div className="flex w-[11%] h-[60px]">
+        <div className='w-full flex flex-row sm:gap-[5%] items-center mt-[1%]  max-sm:justify-between'>
+            <div className="flex w-[11%] h-[100px] sm:ml-[0.5%] max-sm:mt-[2%] max-sm:w-[25%] max-sm:h-[80px]">
                 <LogoText/>
             </div>
             <div className="flex flex-row font-normal grow text-lg gap-[8%] justify-start items-center max-sm:hidden">

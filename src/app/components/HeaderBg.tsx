@@ -1,7 +1,8 @@
-export default function HeaderBackground(){
+import SmallSvg from 'small.svg'
+function LargeHeader(){
     return (
-        <>
-            <div className="-z-30 header-bg absolute top-0 left-0 right-[2px] bottom-[2px] bg-white/30  ">
+        <div className="max-sm:hidden">
+            <div className="-z-30 header-bg absolute top-[5px] left-0 right-[2px] bottom-[2px] bg-white/30  ">
                 <svg xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">
@@ -10,8 +11,8 @@ export default function HeaderBackground(){
                             </defs>
                 </svg>
             </div>
-            <div className="-z-30 header-bg absolute top-0 left-0 right-0 bottom-0 bg-[#0e1118]"/>
-            <div className=" -z-15 header-bg absolute top-0 left-0 right-0 bottom-0 bg-bannerColor blur-[80px]">
+            <div className="-z-30 header-bg absolute top-[5px] left-0 right-0 bottom-0 bg-[#0e1118]"/>
+            <div className=" -z-15 header-bg absolute top-[5px] left-0 right-0 bottom-0 bg-bannerColor blur-[80px]">
                 <svg xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">
@@ -23,7 +24,46 @@ export default function HeaderBackground(){
                 <div className="bg-[#1371A7] w-[170px] h-[100px] rounded-full top-[50%] right-[80%] absolute" />                
                 <div className="bg-[#915DFF] w-[120px] h-[100px] rounded-full top-[65%] right-[1%] absolute" />                
             </div>
-        </>
+        </div>
+    )
+}
 
+function SmallHeader(){
+    return (
+        <div className="sm:hidden absolute top-[5px] left-[1%] bottom-0 right-0  w-[98%] ">
+            <div className="-z-30 banner-small absolute top-0 left-0 right-[2px] bottom-[2px] bg-white/20  ">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                            <clipPath id="my-clip-small" clipPathUnits="objectBoundingBox">
+                                <path d="M0,0.112 C0,0.06,0,0.034,0.018,0.017 C0.019,0.017,0.02,0.016,0.02,0.016 C0.039,0,0.07,0,0.13,0 H0.154 C0.173,0,0.182,0,0.19,0.002 C0.204,0.006,0.215,0.013,0.223,0.024 C0.227,0.03,0.229,0.038,0.234,0.054 C0.241,0.076,0.244,0.087,0.251,0.096 C0.261,0.111,0.278,0.122,0.297,0.127 C0.309,0.13,0.322,0.13,0.349,0.13 H0.868 C0.93,0.13,0.961,0.13,0.981,0.147 C1,0.163,1,0.19,1,0.243 V0.833 C1,0.847,1,0.854,0.998,0.861 C0.996,0.868,0.992,0.875,0.983,0.888 L0.932,0.967 C0.923,0.981,0.918,0.989,0.911,0.993 C0.909,0.995,0.906,0.996,0.904,0.997 C0.896,1,0.886,1,0.867,1 C0.843,1,0.83,1,0.821,0.995 C0.818,0.994,0.815,0.992,0.812,0.989 C0.804,0.983,0.801,0.972,0.795,0.952 L0.777,0.888 C0.769,0.862,0.765,0.849,0.754,0.842 C0.743,0.835,0.728,0.835,0.697,0.835 H0.258 C0.225,0.835,0.209,0.835,0.197,0.843 C0.186,0.851,0.183,0.865,0.177,0.893 L0.165,0.954 C0.162,0.97,0.16,0.977,0.156,0.983 C0.151,0.99,0.145,0.995,0.137,0.997 C0.129,1,0.12,1,0.102,1 C0.068,1,0.051,1,0.038,0.995 C0.024,0.989,0.013,0.979,0.006,0.967 C0,0.956,0,0.941,0,0.912 V0.112"></path>
+                            </clipPath>
+                            </defs>
+                </svg>
+            </div>
+            <div className="-z-30 banner-small absolute top-0 left-0 right-0 bottom-0 bg-[#0e1118]"/>
+            <div className="-z-15 banner-small absolute top-0 left-0 right-0 bottom-0 bg-bannerColor blur-[80px]">
+
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                    <clipPath id="my-clip-small" clipPathUnits="objectBoundingBox">
+                        <path d="M0,0.112 C0,0.06,0,0.034,0.018,0.017 C0.019,0.017,0.02,0.016,0.02,0.016 C0.039,0,0.07,0,0.13,0 H0.154 C0.173,0,0.182,0,0.19,0.002 C0.204,0.006,0.215,0.013,0.223,0.024 C0.227,0.03,0.229,0.038,0.234,0.054 C0.241,0.076,0.244,0.087,0.251,0.096 C0.261,0.111,0.278,0.122,0.297,0.127 C0.309,0.13,0.322,0.13,0.349,0.13 H0.868 C0.93,0.13,0.961,0.13,0.981,0.147 C1,0.163,1,0.19,1,0.243 V0.833 C1,0.847,1,0.854,0.998,0.861 C0.996,0.868,0.992,0.875,0.983,0.888 L0.932,0.967 C0.923,0.981,0.918,0.989,0.911,0.993 C0.909,0.995,0.906,0.996,0.904,0.997 C0.896,1,0.886,1,0.867,1 C0.843,1,0.83,1,0.821,0.995 C0.818,0.994,0.815,0.992,0.812,0.989 C0.804,0.983,0.801,0.972,0.795,0.952 L0.777,0.888 C0.769,0.862,0.765,0.849,0.754,0.842 C0.743,0.835,0.728,0.835,0.697,0.835 H0.258 C0.225,0.835,0.209,0.835,0.197,0.843 C0.186,0.851,0.183,0.865,0.177,0.893 L0.165,0.954 C0.162,0.97,0.16,0.977,0.156,0.983 C0.151,0.99,0.145,0.995,0.137,0.997 C0.129,1,0.12,1,0.102,1 C0.068,1,0.051,1,0.038,0.995 C0.024,0.989,0.013,0.979,0.006,0.967 C0,0.956,0,0.941,0,0.912 V0.112"></path>
+                    </clipPath>
+                    </defs>
+                </svg>
+                <div className="bg-[#1D6750] w-5/12 h-[120px] rounded-full top-[30%] right-[1%] absolute" />                
+                <div className="bg-[#1371A7] w-[170px] h-[100px] rounded-full top-[50%] right-[80%] absolute" />                
+                <div className="bg-[#915DFF] w-[120px] h-[100px] rounded-full top-[65%] right-[1%] absolute" /> 
+            </div>
+        </div>
+    )
+}
+
+
+export default function HeaderBackground(){
+    return (
+        <>
+            <LargeHeader />
+            <SmallHeader />
+        </>
     )
 }

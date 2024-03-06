@@ -17,7 +17,7 @@ export default function Home() {
   })
   return (
     <>
-    <main className='container max-w-[1400px] w-full mx-auto relative max-[1400px]:overflow-hidden'>
+    <main className='container max-w-[1400px] min-w-[350px] w-full mx-auto relative max-[1400px]:overflow-hidden'>
       <Header />
       <Bio />
       <Skills />

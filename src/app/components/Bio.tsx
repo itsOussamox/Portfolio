@@ -24,8 +24,8 @@ function BioText(){
                 <p className="text-xl">My true joy lies in creating dynamic and interactive web experiences. From eye-catching animations to seamless transitions,
                 I believe in making the digital world an exciting place to explore.</p>
             </div>
-            <div className="flex  justify-center gap-[1%] mt-[3%] ">
-                <Highlight className="font-gilroy sm:text-3xl md:text-3xl lg:text-4xl cursor-pointer">View My Resume</Highlight>
+            <div className="flex justify-center gap-[1%] mt-[3%] ">
+                <Highlight className="font-gilroy sm:text-3xl md:text-3xl lg:text-4xl max-sm:text-2xl cursor-pointer">View My Resume</Highlight>
                 <Link href="https://peach-shauna-85.tiiny.site/" target="_blank">
                     <Image src={OpenTab} alt="OpenTab" className="h-[80%]" />
                 </Link>

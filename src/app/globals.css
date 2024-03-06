@@ -28,13 +28,10 @@ body {
 .textTransparent {
     -webkit-text-fill-color: transparent;
 }
-
-.header-container {
-    height: calc(100vh - 10rem);
-    width: calc(100% - 2rem);
-    
-    min-height: 500;
-}
+.clip-path-background {
+    clip-path: url('#'); /* Reference the ID from the SVG */
+    /* Optional background styling (e.g., color, gradient) */
+  }
 
 .banner-job-radius {
     border-radius: calc(100% - 1px);
@@ -56,12 +53,24 @@ body {
     scrollbar-width: none;
 }
 
+.banner-small {
+    clip-path: url(#my-clip-small);
+}
+
+.icon-hover:hover {
+    filter: drop-shadow(0 0 0.75rem #fff);
+}
+
 .input-size {
     font-size: clamp(0.8rem, 1.5vw, 1.5rem);
 }
 
 .tool-size {
     font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+}
+
+.get-in-size {
+    font-size: clamp(0.1rem, 5vw, 1.5rem);
 }
 
 .banner-size {
