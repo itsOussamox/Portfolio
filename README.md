@@ -15,17 +15,3 @@ Welcome to my portfolio project showcasing my skills as a FullStack Web Develope
 - Tailwind CSS: A utility-first CSS framework that allows for rapid development with pre-defined, low-level utility classes.
 
 - Spline: A tool or library (context-dependent) often used for creating smooth and dynamic animations or curves, enhancing user interfaces with visually appealing transitions.
-
-## How to run:
-
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-Open [http://localhost:6969](http://localhost:6969) with your browser to see the result.
